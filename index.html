@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>IFSP Esportes - Campus Birigui</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">
+      <img src="imagens/IFSP-BIRIGUI.png" alt="IFSP">
+      <span><b>INSTITUTO FEDERAL</b><br>São Paulo - Câmpus Birigui</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Uniformes</a></li>
+        <li><a href="#">Jogos</a></li>
+        <li><a href="#">Times</a></li>
+        <li><a href="#">Jogadores</a></li>
+        <li><a href="#">Cadastrar-se</a></li>
+        <li><a href="#">Fazer Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Slideshow -->
+  <section class="slideshow-container">
+    <img class="slides fade" src="img/futsal.jpg" alt="Imagem Futsal">
+    <img class="slides fade" src="imagens/volei1.jpg" alt="volei 1">
+    <img class="slides fade" src="imagens/tenisdemesa.jpg" alt="Imagem 3">
+
+    <!-- Botões -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </section>
+
+  <!-- Texto -->
+  <section class="descricao">
+    <h2>Destaques Recentes</h2>
+    <p>
+      (JIFs), uma competição desportiva que teve o campus do Instituto Federal de São Paulo (IFSP) em Presidente Epitácio como um dos palcos do JIF SP 2024, realizado entre 13 e 16 de dezembro.
+    </p>
+  </section>
+
+  <!-- Galeria -->
+  <section class="galeria">
+    <h2>Galeria de Imagens</h2>
+    <div class="grid">
+      <img src="foto4.jpg" alt="Galeria 1">
+      <img src="foto5.jpg" alt="Galeria 2">
+      <img src="foto6.jpg" alt="Galeria 3">
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 IFSP - Campus Birigui | Projeto Esportes</p>
+  </footer>
+
+  <script>
+    // Slideshow com botões
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("slides");
+      if (n > slides.length) {slideIndex = 1}
+    }

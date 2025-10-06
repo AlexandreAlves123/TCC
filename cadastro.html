@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .cadastro-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+        .link-login {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .link-login a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .link-login a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 480px) {
+            .cadastro-container {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cadastro-container">
+        <h2>Cadastro</h2>
+        <form id="cadastroForm">
+            <input type="text" id="nome" placeholder="Nome Completo" required>
+            <input type="email" id="email" placeholder="E-mail" required>
+            <input type="password" id="senha" placeholder="Senha" required minlength="6">
+            <input type="password" id="confirmarSenha" placeholder="Confirmar Senha" required>
+            <button type="submit">Cadastrar</button>
+            <div id="errorMessage" class="error">Por favor, verifique os campos. As senhas devem coincidir e o e-mail deve ser válido.</div>
+        </form>
+        <div class="link-login">
+            Já tem uma conta? <a href="login.html">Faça login aqui</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const senha = document.getElementById('senha').value;
+            const confirmarSenha = document.getElementById('confirmarSenha').value;
+            const errorMsg = document.getElementById('errorMessage');
+
+            // Resetar mensagem de erro
+            errorMsg.style.display = 'none';
+
+            // Validações
+            if (!nome || !email || !senha || !confirmarSenha) {
+                errorMsg.textContent = 'Por favor, preencha todos os campos.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            if (senha.length < 6) {
+                errorMsg.textContent = 'A senha deve ter pelo menos 6 caracteres.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            if (senha !== confirmarSenha) {
+                errorMsg.textContent = 'As senhas não coincidem.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            // Validação básica de e-mail
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                errorMsg.textContent = 'E-mail inválido.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            // Simulação de sucesso
+            alert('Cadastro realizado com sucesso!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

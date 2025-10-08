@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>IFSP Esportes - Campus Birigui</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" >
+  <link href="lib/bootstrap-5.3.8/css/bootstrap.min.css" rel="stylesheet" >
 </head>
 <body>
 
@@ -15,35 +16,41 @@
       <div class="cabecalho">
         <nav>
           <ul>
-            <li><a href="../TCC/uniformes.html">Uniformes</a></li>
-            <li><a href="../TCC/partidas.html">Jogos</a></li>
-            <li><a href="#">Times</a></li>
-            <li><a href="../TCC/cadastro_jogador.html">Jogadores</a></li>
-            <li><a href="../TCC/cadastro.html">Cadastrar-se</a></li>
-            <li><a href="../TCC/login.html">Fazer Login</a></li>
+            <li><a href="../TCC/uniformes/uniformes.html">Uniformes</a></li>
+            <li><a href="../TCC/partida/partidas.html">Jogos</a></li>
+            <li><a href="../TCC/times/times.html">Times</a></li>
+            <li><a href="../TCC/cadastro/cadastro_jogador.html">Jogadores</a></li>
+            <li><a href="../TCC/login_usuario/cadastro.html">Cadastrar-se</a></li>
+            <li><a href="../TCC/login_usuario/login.html">Fazer Login</a></li>
           </ul>
         </nav>
       </div>
     </div>
   </header>
+  <div id="carouselExampleFade" class="carousel slide carousel-fade">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/futsal2.jpg" alt="Descrição da imagem" width="1450" height="500">
+      </div>
+      <div class="carousel-item">
+        <img src="../TCC/img/futsal7.jpg" alt="Descrição da imagem" width="1450" height="500">
+      </div>
+      <div class="carousel-item">
+        <img src="img/futsap6.jpg" alt="Descrição da imagem" width="1450" height="500">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 
-  <!-- Slideshow -->
-  <section class="slideshow-container">
-<<<<<<< HEAD
-    <img class="slides fade" src="https://tribovibe.com/wp-content/uploads/2024/12/JOGO151224-2162.jpg" alt="Imagem Futsal">
-    <img class="slides fade" src="../TCC/img/volei1.jpg" alt="volei 1">
-    <img class="slides fade" src="../TCC/img/tenisdemesa.jpg" alt="Imagem 3">
-=======
-    <img class="slides fade" src="img/futsal.jpg" alt="Imagem Futsal">
-    <img class="slides fade" src="img/volei1.jpg" alt="volei 1">
-    <img class="slides fade" src="img/tenisdemesa.jpg" alt="Imagem 3">
->>>>>>> f0083233c3328d3fb650aa8eb02da067f9997230
-
-    <!-- Botões -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  </section>
-
+  <script src="lib/bootstrap-5.3.8/js/bootstrap.bundle.min.js" ></script>
+   
   <!-- Texto -->
   <section class="descricao">
     <h2>Destaques Recentes</h2>
@@ -54,11 +61,11 @@
 
   <!-- Galeria -->
   <section class="galeria">
-    <h2>Galeria de Imagens</h2>
+    <h2></h2>
     <div class="grid">
-      <img src="../TCC/img/futsal3.png" alt="Galeria 1">
+      <img src="../TCC/img/lendas.jpg" alt="Galeria 1">
       <img src="../TCC/img/volei2.jpg" alt="Galeria 2">
-      <img src="../TCC/img/futsal2.jpg" alt="Galeria 3">
+      <img src="img/futsal8.jpg" alt="Galeria 3">
     </div>
   </section>
 

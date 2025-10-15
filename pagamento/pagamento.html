@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pagamento - Uniforme</title>
+  <link rel="stylesheet" href="pagamento.css" />
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="../img/IFSP-LOGO.png" alt="Logo" />
+    <div class="logo-text">
+      <span>INSTITUTO FEDERAL</span>
+      <b>Esportes</b>
+      <span class="campus">São Paulo - Câmpus Birigui</span>
+    </div>
+  </div>
+  <nav>
+    <button>Uniformes</button>
+    <button>Jogos</button>
+    <button>Times</button>
+    <button>Jogadores</button>
+    <a href="#"><img src="https://img.icons8.com/ios-filled/30/user-male-circle.png" alt="Perfil"></a>
+  </nav>
+</header>
+
+<main>
+  <div class="titulo">Pagamento do Uniforme</div>
+  <div class="form-container">
+    <form class="pagamento-form" id="form-pagamento">
+
+      <!-- Seleção de Esporte -->
+      <label for="esporte">Selecione o esporte</label>
+      <select id="esporte" required onchange="atualizarValor()">
+        <option value="">Escolha uma opção</option>
+        <option value="volei">Vôlei</option>
+        <option value="tenis">Tênis de Mesa</option>
+        <option value="futsal">Futsal</option>
+      </select>
+      <div id="valor-uniforme"></div>
+
+      <!-- Seleção de Tamanho -->
+      <label for="tamanho">Selecione o tamanho do uniforme</label>
+      <select id="tamanho" required>
+        <option value="">Escolha um tamanho</option>
+        <option value="pp">PP</option>
+        <option value="p">P</option>
+        <option value="m">M</option>
+        <option value="g">G</option>
+        <option value="gg">GG</option>
+      </select>
+
+      <!-- Forma de Pagamento -->
+      <label for="forma">Forma de pagamento</label>
+      <select id="forma" required onchange="trocarFormaPagamento(this.value)">
+        <option value="cartao">Cartão de Crédito</option>
+        <option value="pix">Pix</option>
+      </select>
+
+      <!-- Pagamento com Cartão -->
+      <div id="pagamento-cartao">
+        <label for="nome">Nome do Titular</label>
+        <input type="text" id="nome" placeholder="Seu nome completo" />
+
+        <label for="cartao">Número do Cartão</label>
+        <input type="text" id="cartao" placeholder="0000 0000 0000 0000" maxlength="19" />
+
+        <div class="linha">
+          <div>
+            <label for="validade">Validade</label>
+            <input type="text" id="validade" placeholder="MM/AA" maxlength="5" />
+          </div>
+          <div>
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" placeholder="123" maxlength="4" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagamento com Pix -->
+      <div id="pagamento-pix" style="display: none;">
+        <p>Escaneie o QR Code ou use a chave abaixo:</p>
+        <img src="qrcode.png" alt="QR Code Pix" class="qrcode" />
+        <p><strong>Chave Pix:</strong></p>
+        <input type="text" value="pix@ifsp.edu.br" readonly onclick="this.select()" />
+      </div>
+
+      <!-- Botão de Pagamento -->
+      <button type="submit" class="botao-pagar">Finalizar Pagamento</button>
+    </form>
+  </div>
+</main>
+
+<script>
+  function trocarFormaPagamento(valor) {
+    const cartao = document.getElementById('pagamento-cartao');
+    const pix = document.getElementById('pagamento-pix');
+    if (valor === 'pix') {
+      cartao.style.display = 'none';
+      pix.style.display = 'block';
+    } else {
+      cartao.style.display = 'block';
+      pix.style.display = 'none';
+    }
+  }
+
+  function atualizarValor() {
+    const esporte = document.getElementById('esporte').value;
+    const valorDiv = document.getElementById('valor-uniforme');
+    let valor = '';
+
+    if (esporte === 'volei' || esporte === 'tenis') {
+      valor = 'R$ 45,00';
+    } else if (esporte === 'futsal') {
+      valor = 'R$ 80,00';
+    } else {
+      valor = '';
+    }
+
+    valorDiv.textContent = valor ? `Valor do uniforme: ${valor}` : '';
+  }
+
+  document.addEventListener('DOMContentLoaded', atualizarValor);
+</script>
+
+</body>
+</html>

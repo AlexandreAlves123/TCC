@@ -6,17 +6,24 @@ body {
 }
 
 /* Cabeçalho */
-header .cabecalho {
-   justify-content: center; 
+header .logo {
+  left: 100px;
 }
 
 header {
-  background: #111;
-  color: white;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 15px 40px;
+/* Adicione este código ao seu arquivo CSS */
+  border-bottom: 8px solid #000; /* Linha preta com 2px de espessura */
+  padding-bottom: 15px; /* Opcional: Adiciona um espaço entre o menu e a linha */
+
+
+
+    
 }
 
 header .logo {
@@ -34,11 +41,13 @@ header nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 25px;
+  gap: 20px;
+  justify-content: center; /* <<< ADICIONE ESTA LINHA */
 }
 
+
 header nav a {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   font-weight: bold;
   font-size: 15px;

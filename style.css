@@ -14,7 +14,7 @@ header {
   background: #ffffff;
   color: rgb(0, 0, 0);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
 /* Adicione este código ao seu arquivo CSS */

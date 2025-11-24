@@ -12,18 +12,13 @@ header .logo {
 
 header {
   background: #ffffff;
-  color: rgb(0, 0, 0);
+  color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-/* Adicione este código ao seu arquivo CSS */
-  border-bottom: 8px solid #000; /* Linha preta com 2px de espessura */
-  padding-bottom: 15px; /* Opcional: Adiciona um espaço entre o menu e a linha */
-
-
-
-    
+  border-bottom: 8px solid black; /* Linha preta com 2px de espessura */
+  padding-bottom: 15px; /* Opcional: Adiciona um espaço entre o menu e a linha */ 
 }
 
 header .logo {
@@ -42,7 +37,7 @@ header nav ul {
   padding: 0;
   display: flex;
   gap: 20px;
-  justify-content: center; /* <<< ADICIONE ESTA LINHA */
+  justify-content: center;
 }
 
 

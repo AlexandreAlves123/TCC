@@ -5,12 +5,14 @@ body {
 }
 
 header {
-  background-color: white;
-  padding: 10px 30px;
+  background: #ffffff;
+  color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid black;
+  padding: 15px 40px;
+  border-bottom: 8px solid black; /* Linha preta com 2px de espessura */
+  padding-bottom: 15px; /* Opcional: Adiciona um espaço entre o menu e a linha */ 
 }
 
 .logo {
